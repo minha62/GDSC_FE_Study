@@ -10,7 +10,7 @@
 * vscode 사용 적응
 * code Formatter와 Prettier 도입해 코드 작성 [참고](https://crong-dev.tistory.com/67)
 * 협업 기반 git 사용 & 기능별 commit
-* html, css, 바닐라 js를 사용해 요구 사항 개발
+* html, css, 바닐라 js 사용해 요구 사항 개발
 * gh-pages 이용한 배포
 
 ## 요구사항
