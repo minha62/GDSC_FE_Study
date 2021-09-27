@@ -13,3 +13,10 @@ GDSC EWHA Front-End Toy Project Study
 4. 로컬에서 작성한 코드를 원격 레포지터리에 `git push`<br>
 5. 결과물은 `Pull request`를 이용해 PR 띄우기 <br>
 6. 함께 코드리뷰/발표/수정작업 후 각자 branch를 `merge` 하기 
+
+## Project
+|번호|주제|repo|
+|------|---|
+|week 1 ~ |**크롬웹/투두리스트**||
+|테스트1|테스트2||
+|테스트1|테스트2||
