@@ -44,7 +44,7 @@
 [팀 블로그 정리] (링크)
 
 ## 참고 강의
-[바닐라 JS로 크롬 웹 만들기] (https://nomadcoders.co/javascript-for-beginners/lobby)
+[바닐라 JS로 크롬 웹 만들기](https://nomadcoders.co/javascript-for-beginners/lobby)
 
 
 ## 기한
