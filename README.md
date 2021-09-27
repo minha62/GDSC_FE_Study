@@ -16,7 +16,7 @@ GDSC EWHA Front-End Toy Project Study
 
 ## Project
 |번호|주제|repo|
-|------|---|
-|week 1 ~ |**크롬웹/투두리스트**||
+|------|---|---|
+|week 1 ~ |**크롬웹/투두리스트**|[repo](https://github.com/JangAyeon/GDSC_FE_Study/tree/main/vanilla-js-ChromeWeb)|
 |테스트1|테스트2||
 |테스트1|테스트2||
