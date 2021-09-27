@@ -6,7 +6,7 @@ GDSC EWHA Front-End Toy Project Study
 
 ## Guideline
 1. 각자 PC에서 git 설치, 해당 레포지터리 fork 후, git clone 이용해 로컬에 다운 받기 <br>
-`git clone `
+`git clone https://github.com/JangAyeon/GDSC_FE_Study.git`
 2. vscode 이용해 작업<br>
 3. 각자 개인의 branch 생성<br>
 초기 branch로 설정된 `main`에서 `git checkout -b {본인 이름}`로 브랜치 생성 및 교체<br>
