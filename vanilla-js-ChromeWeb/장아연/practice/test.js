@@ -81,4 +81,5 @@ const multiResult=calculator.multi(10,4)
 
 const age=prompt("how old are you")
 console.log(age)
-console.log(typeof age)
+console.log(typeof age) //prompt get input as string
+console.log(parseInt(age)) //parseInt change string to Int
