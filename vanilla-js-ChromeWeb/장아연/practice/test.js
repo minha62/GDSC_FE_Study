@@ -190,3 +190,25 @@ function handleWindowOnline(){
 
 window.addEventListener("offline",handleWindowOffline)
 window.addEventListener("online",handleWindowOnline)
+
+
+//3.6
+const h1=document.querySelector("div.hello h1")
+
+function handleTitleClick(){
+    const currentColor=h1.style.color;//get color
+    let newColor;
+
+    if (currentColor==="blue"){
+        newColor="tomato";//set color
+    }
+    else{
+        newColor="blue";
+    }
+    h1.style.color=newColor;
+}
+
+function handleMouseEnter(){
+    h1.innerText="Mouse is here!";
+}
+h1.addEventListener("click",handleTitleClick)
