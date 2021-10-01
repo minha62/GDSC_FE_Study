@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheer" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" >
     <title>to-do-web</title>
     
 </head>
@@ -40,11 +44,28 @@
         </section>
 
         <!--Fourth : Calender-->
-        <section id="Calender">
+        <section id="Calender"> 
             <div class="Calender__container">
-                <h1 class="main__title">
-                    Calender
-                </h1>
+                <div class="Calender__header">
+                    <div class="year-month"></div>
+                    <div class="nav">
+                        <button class="nav-btn go-prev" >&lt;</button>
+                        <button class="nav-btn go-today">Today</button>
+                        <button class="nav-btn go-next">&gt;</button>
+                    </div>
+                </div>
+                <div class="Calender__main">
+                    <div class="days">
+                        <div class="day">일</div>
+                        <div class="day">월</div>
+                        <div class="day">화</div>
+                        <div class="day">수</div>
+                        <div class="day">목</div>
+                        <div class="day">금</div>
+                        <div class="day">토</div>
+                    </div>
+                    <div class="dates"></div>
+                </div>
             </div>
         </section>
 
