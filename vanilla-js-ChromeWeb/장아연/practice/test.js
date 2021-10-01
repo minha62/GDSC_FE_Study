@@ -79,7 +79,114 @@ const plusResult=calculator.plus(10,4)
 const subResult=calculator.subtract(10,4)
 const multiResult=calculator.multi(10,4)
 
-const age=prompt("how old are you")
-console.log(age)
-console.log(typeof age) //prompt get input as string
-console.log(parseInt(age)) //parseInt change string to Int
+const age2=prompt("how old are you")
+console.log(age2)
+//prompt get input as string
+console.log(typeof age2) 
+ //parseInt change string to Int
+console.log(parseInt(age2))
+//parseInt 한 후 변수의 값이 숫자가 아니라면 해당 문자열은 숫자로 변경 불가능한 문자열임
+
+const a=Number("123ads123")
+console.log(a) //NaN
+const b=parseInt("123asd123")
+console.log(b) //123
+
+
+const age1=parseInt(prompt())
+if (isNaN(age1) || age1<0){
+    console.log("Plz write a real positive number");
+}
+else if(age1<18){
+    console.log("You are too young");
+}
+else if (age1>=18 && age1<=50){
+    console.log("You can drink");
+}
+else if (age1>50 && age1<=80){
+    console.log("You should exercise");
+}
+else if (age1===100){
+    console.log("wow you are wise");
+}
+else if (age1>80){
+    console.log("you can do whatever you want");
+}
+
+const title=document.getElementById("title");
+title.innerText="Got You"
+console.log(title)
+
+
+
+
+
+//# 3.3
+//listen for event
+
+const title1=document.querySelector(".hello h1")
+console.log(title1)
+title1.style.color="blue"
+
+//1. set which subject and event you are caring for
+//2. make function which operate with event occuring
+//3.  make them into addEventListener
+//function that is included in addEventlistner is called "callback function"
+
+function handleTitleClick(){
+    console.log("title was clicked!");
+    title1.style.color="pink"
+}
+title1.addEventListener("click",handleTitleClick)
+
+//# 3.4
+
+const title2=document.querySelector("div.hello h1")
+console.log(title2)
+
+
+function handleMouseEnter(){
+    title2.innerText="Mouse is here!"
+}
+
+function handleMouseLeave(){
+    title2.innerText="Mouse is gone!"
+}
+
+title2.addEventListener("mouseenter",handleMouseEnter)
+title2.addEventListener("mouseleave",handleMouseLeave)
+
+
+//3.5
+//add event하는 또 다른 방법/표현법
+title1.addEventListener("click",handleTitleClick)
+//title1.onclick=handleTitleClick; 
+
+title2.addEventListener("mouseenter",handleMouseEnter)
+//title2.onmouseenter=handleMouseEnter;
+
+title2.addEventListener("mouseleave",handleMouseLeave)
+//title2.onmouseleave=handleMouseLeave;
+
+//event regarding about window
+function handleWindowResize(){
+    document.body.style.backgroundColor="red";
+}
+function handleWindowCopy(){
+    alert("Copier!!");
+}
+window.addEventListener("resize",handleWindowResize)
+window.addEventListener("copy",handleWindowCopy)
+
+//event regarding about wifi
+
+function handleWindowOffline(){
+    alert("SOS!! NO WIFI");
+}
+
+function handleWindowOnline(){
+    alert("Good!! WIFI Connected");
+}
+
+window.addEventListener("offline",handleWindowOffline)
+window.addEventListener("online",handleWindowOnline)
