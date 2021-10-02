@@ -2,7 +2,14 @@
 
 /*Font Size*/
 :root {
+  --font-large: 35px;
+  --font-regular: 25px;
   --font-small: 62.5%;
+  --border-radius-section: 25px;
+  --line-height: 130%;
+  --weight-bold: 700;
+  --weight-semi-bold: 500;
+  --weight-regular: 400;
 }
 
 body {
@@ -15,6 +22,9 @@ body {
 }
 section {
   margin: 5%;
+}
+section div {
+  border-radius: var(--border-radius-section);
 }
 
 /*background*/
@@ -37,27 +47,58 @@ section {
 }
 
 /*Second : daily report & daily quote*/
-#report__quote {
+#daily__quote {
   width: 90%;
   display: flex;
   justify-content: space-between;
+  font-size: var(--font-regular);
+  line-height: var(--line-height);
 }
-.report__container {
+.daily__container {
   background-color: blue;
   width: 45%;
-  padding-bottom: 45%;
+}
+.text {
+  padding: 10%;
+  font-weight: var(--weight-bold);
+  font-size: var(--font-large);
+  line-height: var(--line-height);
 }
 
 .quote__container {
   background-color: blueviolet;
   width: 45%;
-  padding-bottom: 45%;
+  display: block;
+  align-items: flex-start;
+  background-image: url(img/4.jpg);
+  color: white;
+}
+
+.quote__container div {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+.quote__container .header {
+  padding-top: 10%;
+  justify-content: space-between;
+  font-weight: var(--weight-bold);
+}
+.quote {
+  padding-top: 5%;
+  padding-bottom: 5%;
+  font-weight: var(--weight-semi-bold);
+}
+.author {
+  font-size: var(--font-small);
+  text-decoration: underline dotted;
+  text-underline-position: under;
+  padding-bottom: 10%;
 }
 
 /*Third : Progress bar*/
 .progress__container {
   width: 100%;
-  padding-bottom: 100%;
+  padding-bottom: 30%;
   background-color: pink;
 }
 
@@ -133,11 +174,20 @@ section {
 .other {
   opacity: 0.3;
 }
+.this:hover,
+.other:hover {
+  color: #ffffff;
+  display: block;
+  width: 30%;
+
+  background-color: lightslategray;
+  margin: auto;
+}
 .this.today {
   color: #ffffff;
 
   display: block;
-  width: 50%;
+  width: 30%;
 
   background-color: #ff0000;
   margin: auto;
