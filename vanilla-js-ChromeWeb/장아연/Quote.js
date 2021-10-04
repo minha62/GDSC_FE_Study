@@ -43,8 +43,8 @@ const quotes = [
   ];
 
 quote_block=document.querySelectorAll(".quote__container div")
-const quote=quote_block[1]
-const author=quote_block[2]
+const quote=quote_block[0]
+const author=quote_block[1]
 
 const todaysQuote=quotes[Math.floor(Math.random()*quotes.length)];
 quote.innerText=todaysQuote.quote
