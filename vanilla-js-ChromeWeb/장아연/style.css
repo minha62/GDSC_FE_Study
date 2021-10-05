@@ -3,8 +3,8 @@
 /*Font Size*/
 :root {
   /*Font size*/
-  --font-large: 2rem;
-  --font-regular: 1.2rem;
+  --font-large: 2.5rem;
+  --font-regular: 1.8rem;
   --font-small: 62.5%;
 
   /*Font weight*/
@@ -112,10 +112,12 @@ section div {
 }
 
 .quote {
-  padding: 10%;
+  padding: 20% 10% 10% 10%;
   /*bottom: 0px;*/
 
   font-weight: var(--weight-semi-bold);
+  font-size: var(--font-regular);
+  line-height: var(--line-height);
   text-align: center;
 }
 
