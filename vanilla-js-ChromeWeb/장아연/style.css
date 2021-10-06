@@ -271,7 +271,7 @@ section div {
 }
 
 /* For below 768px screen width */
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1280px) {
   :root {
     /*Font size*/
     --font-largest: 3rem;
@@ -281,6 +281,9 @@ section div {
   }
   .quote {
     font-size: var(--font-regular);
+  }
+  .author {
+    display: none;
   }
   .Calender__header {
     flex-direction: column;
