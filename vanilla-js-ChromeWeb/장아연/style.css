@@ -25,6 +25,7 @@
   --color-dark-blue: #77878f;
 
   /*Font size*/
+  --font-largest: 7rem;
   --font-large: 2.5rem;
   --font-regular: 1.8rem;
   --font-small: 62.5%;
@@ -78,7 +79,7 @@ section div {
 #back {
   width: 50%;
   /*height: 100%;*/
-  background-color: var(--color-custom-grey);
+  background-color: var(--color-light-grey);
   align-items: center;
   margin: 0;
 }
@@ -90,17 +91,32 @@ section div {
   height: 0;
   position: relative;
   overflow: hidden;
+  font-size: var(--font-large);
+  font-weight: var(--weight-bold);
 }
 .main__container img {
   width: 100%;
 }
-.main__clock {
+
+.main__info {
   position: absolute;
-  right: 0px;
-  color: white;
-  font-size: var(--font-large);
-  font-weight: var(--weight-bold);
+  display: flex;
+  flex-direction: column;
   padding: 5%;
+  right: 0;
+  color: var(--color-light-white);
+}
+.main__clock {
+  right: 0;
+  padding-bottom: 3%;
+  font-size: var(--font-largest);
+  font-weight: var(--weight-bold);
+}
+.main__info span {
+  text-align: right;
+  line-height: var(--line-height);
+  font-size: var(--font-large);
+  font-weight: var(--weight-semi-bold);
 }
 
 /*Second : daily report & daily quote*/
@@ -239,12 +255,12 @@ section div {
   margin: auto;
 }
 .this.today {
-  color: #ffffff;
+  /*color: #ffffff;*/
 
   display: block;
   width: 30%;
 
-  background-color: var(--color-light-pink);
+  background-color: var(--color-pink);
   margin: auto;
 }
 /*Fifth : To-do-list*/
@@ -258,6 +274,7 @@ section div {
 @media screen and (max-width: 1200px) {
   :root {
     /*Font size*/
+    --font-largest: 3rem;
     --font-large: 1.5rem;
     --font-regular: 1.2rem;
     --font-small: 45%;
