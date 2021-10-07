@@ -1,84 +1,87 @@
-const player={
-    name:"ayeon",
-    point:10,
-    fat:false,
-};
+const toDoForm=document.getElementById("todo-form");
+const toDoInput=document.querySelector("#todo-form input");
+const ToDoList=document.getElementById("todo-list");
+const TODOS_KEY="todos";
+const TODOS_DONE_KEY="todo_done";
+let ToDos=[]; /*start with empty todo elements */
+let ToDos_Done=[];
 
-console.log(player)
-console.log(player.name)
-console.log(player["name"])
-
-//change property value
-player.fat=true //change Boolean value
-console.log(player.fat)
-player.point+=15 //change numerical value by cal-
-console.log(player.point)
-
-//add property and its value
-player.lastName="ayeon"
-console.log(player)
-
-
-function sayHello(nameOfPerson,age){
-    console.log("Hello!! my name is "+nameOfPerson+
-    " and I'm "+age+" years old");
-
-}
-sayHello("nico",20)
-sayHello("ayeon",40)
-sayHello("yummy",90)
-
-function plus(FirstNum,SecondNum){
-    console.log(FirstNum+SecondNum)
-}
-plus(1,7)
-plus(-1,1)
-plus(6*4,10)
-
-function divide(FirstNum,SecondNum){
-    console.log(FirstNum/SecondNum)
-}
-divide(10,5)
-divide(1,5)
-divide(3,2)
-
-const player_1={
-    name:"nico",
-    sayHello:function(otherPersonName){
-        console.log("hello! "+ otherPersonName);
-    },
-    
-};
-
-console.log(player_1.name)
-player_1.sayHello("ayeon");
-
-const age=20;
-function calculateKrAge(ageofForegineer){
-    //ageofForegineer+=2
-    return ageofForegineer+2
+function saveToDos(){
+  
+  localStorage.setItem("TODOS_KEY",JSON.stringify(ToDos)); 
+  /*save todo element in localstorage as text (formed like object)*/
 }
 
-const KrAge=calculateKrAge(64);
-console.log(KrAge)
+
+function deleteTodo(event){
+  const delete_li=event.target.parentElement; /*get li component from event that user's delete click*/
+  delete_li.remove();
+  ToDos=ToDos.filter(ToDo=>ToDo.id!=parseInt(delete_li.id));
+  saveToDos();
+  
+}
+
+function getChecked(check_li){
+  const yet_checked=document.getElementById(check_li);
+  yet_checked.classList.add("check")
+}
+
+function checkTodo(event){
+  const check_li=event.target.parentElement;
+  check_li.classList.add("check");
+  ToDos_Done.push(check_li.id);
+  localStorage.setItem("TODOS_DONE_KEY",JSON.stringify(ToDos_Done)); 
 
 
-const calculator={
-    plus:function(a,b){
-        return a+b
-    },
-    subtract:function(a,b){
-        return a-b
-    },
-    multi:function(a,b)
-{
-    return a*b
-}}
+}
 
-const plusResult=calculator.plus(10,4)
-const subResult=calculator.subtract(10,4)
-const multiResult=calculator.multi(10,4)
+function paintToDo(newTodoObj){
+ const todo_li=document.createElement("li"); /*create li HTML tag*/
+ todo_li.id=newTodoObj.id;/* li tag attribution id is same with todo id*/
+ const todo_span=document.createElement("span"); /*create span HTML tag */
+ todo_span.innerText=newTodoObj.text; /*show newTodo value in span*/
 
-const age=prompt("how old are you")
-console.log(age)
-console.log(typeof age)
+ const todo_delete=document.createElement("button"); /*create button HTML tag*/
+ todo_delete.innerText="❌"
+ todo_delete.addEventListener("click",deleteTodo);
+ const todo_check=document.createElement("button"); /*create button HTML tag*/
+ todo_check.innerText="⭕";
+ todo_check.addEventListener("click",checkTodo);
+
+ todo_li.appendChild(todo_span); /*make span tag go inside of li tag*/
+ todo_li.appendChild(todo_delete); /*make delete button tag go inside of li tag*/
+ todo_li.appendChild(todo_check);/*make check button tag go inside of li tag*/
+ ToDoList.appendChild(todo_li);
+
+}
+
+
+function handleTodoSubmit(event){
+  event.preventDefault();
+  const newTodo=toDoInput.value; /* get input value*/
+  toDoInput.value=""; /*make input form empty after submit*/
+  const newTodoObj={ /*create todo obj {id : todo}*/
+    text:newTodo,
+    id:Date.now()
+  }
+  ToDos.push(newTodoObj);
+  paintToDo(newTodoObj);
+  saveToDos();
+}
+
+toDoForm.addEventListener("submit",handleTodoSubmit);
+
+/*load todo element*/
+const savedToDos=localStorage.getItem("TODOS_KEY");
+const doneToDos=localStorage.getItem("TODOS_DONE_KEY");
+
+if (savedToDos!=null){ /*if todo already exist, before you enter*/
+  const parsedToDos=JSON.parse(savedToDos);
+  ToDos=parsedToDos; /*get already entered todo element*/
+  parsedToDos.forEach(paintToDo); /*display*/
+}
+
+if (doneToDos!=null){ /*if todo already exist, before you enter*/
+  const parsed_doneToDos=JSON.parse(doneToDos);
+  ToDos_Done=parsed_doneToDos; /*get already entered todo element*/
+  parsed_doneToDos.forEach(getChecked)}
