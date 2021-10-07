@@ -2,7 +2,7 @@
 GDSC EWHA Front-End Toy Project Study
 
 ## 출결표
-[출석부] (링크)
+[출석부] (https://docs.google.com/document/d/1tGXloAp-MPz5soTXBmh9Wf0FcEfVt6omVMd_2fAQP0E/edit?usp=sharing)
 
 ## Guideline
 1. 각자 PC에서 git 설치, 해당 레포지터리 fork 후, git clone 이용해 로컬에 다운 받기 <br>
