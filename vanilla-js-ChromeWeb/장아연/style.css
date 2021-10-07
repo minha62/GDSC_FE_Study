@@ -133,10 +133,20 @@ section div {
   padding-bottom: 45%;
   height: 0;
 }
-.text {
+.hidden {
+  display: none;
+}
+
+input {
+  background-color: var(--color-ligth-white);
+  border: none;
+  margin: 10%;
+}
+
+#greeting {
   padding: 10%;
-  /*font-weight: var(--weight-bold);
-  font-size: var(--font-large);*/
+  font-weight: var(--weight-bold);
+  font-size: var(--font-large);
   line-height: var(--line-height);
 }
 

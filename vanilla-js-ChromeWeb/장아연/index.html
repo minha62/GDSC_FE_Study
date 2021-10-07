@@ -50,8 +50,12 @@
         <!--Second : daily report & daily quote-->
         <section id="daily__quote">
             <div class ="daily__container">
-                <h1 class="text">Ayeon's <br>Daily<br> Report</h1>
-                
+                <!--<h1 class="text">Ayeon's <br>Daily<br> Report</h1>-->
+                <form id="login-form" class="hidden">
+                    <input required minlength="1" 
+                        type="text" placeholder="Enter your name">
+                </form>
+                <h1 id="greeting" class="hidden"></h1>
             </div>
             <div class ="quote__container">
                 
@@ -107,7 +111,7 @@
     </section>
     <script src="Clock_Weather.js"></script>
     <script src="Calender.js"></script>
-    <script src="Quote.js"></script>
+    <script src="Quote_Daily.js"></script>
     <script src="Background.js"></script>
 </body>
 </html>
