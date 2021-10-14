@@ -7,10 +7,8 @@ function handleTitleClick(){
     if(currentColor === "blue"){
         newColor = "tomato";
     } else{
-        newColor = "blue";
+        h1.className = clickedClass; //최초의 클래스네임은 사라짐
     }
-    
-    h1.style.color = newColor;
 }
 
 h1.addEventListener("click", handleTitleClick);
