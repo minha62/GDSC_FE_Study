@@ -9,9 +9,13 @@
     </head>
     
     <body>
-        <div class="hello">
-            <h1 class="original">Click me!</h1>
-        </div>
+        <!--버튼 누르면 form이 자동으로 submit되기 때문에 더 이상 click에 신경 쓸 필요 없음
+        하지만 submit될때마다 웹사이트가 새로고침됨-->
+        <form id="login-form">
+            <input required maxlength="15" type="text" placeholder="what is your name?"/>
+            <button>Log In</button>
+        </form>
+        
         <script src="script.js"></script>
     </body>    
 </html>

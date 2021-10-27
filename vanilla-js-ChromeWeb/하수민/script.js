@@ -1,16 +1,16 @@
-const h1 = document.querySelector("div.hello:first-child h1");
+// const loginForm = document.getElementById("login-form");
+const loginInput = document.querySelector("#login-form input");
+const loginButton = document.querySelector("#login-form button");
 
-function handleTitleClick(){
-    /**
-    const clickedClass = "clicked"
-    if(h1.classList.contains(clickedClass)){  // 초기의 클래스네임 계속 남아있음
-        h1.classList.remove(clickedClass);
-    } else{
-        h1.classList.add(clickedClass);
+function onLoginBtnClick(){
+    const username = loginInput.value;
+    /** 
+    if(username === ""){
+        alert("Please write your name");
+    }else if(username.length > 15){
+        alert("Your name is too long.");
     }
     */
-    h1.classList.toggle("clicked"); //위으 코드를 toggle 사용해서 한 줄로 만들 수 있음
 }
 
-h1.addEventListener("click", handleTitleClick);
-
+loginButton.addEventListener("click", onLoginBtnClick);
