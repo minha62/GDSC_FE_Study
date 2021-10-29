@@ -1,16 +1,12 @@
-// const loginForm = document.getElementById("login-form");
+const loginForm = document.getElementById("login-form");
 const loginInput = document.querySelector("#login-form input");
-const loginButton = document.querySelector("#login-form button");
 
-function onLoginBtnClick(){
-    const username = loginInput.value;
-    /** 
-    if(username === ""){
-        alert("Please write your name");
-    }else if(username.length > 15){
-        alert("Your name is too long.");
-    }
-    */
+function onLoginSubmit(event){
+    //const username = loginInput.value;
+    event.preventDefault(); // 브라우저기 가본 동작을 하지 못하도록 막음 - 새로고침
+    console.log(loginInput.value);
 }
 
-loginButton.addEventListener("click", onLoginBtnClick);
+loginForm.addEventListener("submit", onLoginSubmit);
+
+// onLoginSubmit() - 브라우저가 () 보는 순간 바로 실행시켜버림 
