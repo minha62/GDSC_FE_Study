@@ -2,10 +2,12 @@ const toDoForm = document.getElementById("todo-form");
 const toDoInput = toDoForm.querySelector("input");
 const toDoList = document.getElementById("todo-list");
 
-const toDos = [];
+const TODOS_KEY = "todos";
+
+let toDos = [];
 
 function saveToDos(){
-    localStorage.setItem("todos", JSON.stringify(toDos)); // JSON.stringify() : string으로 convert해줌. 여기선 array 모양으로 toDos 저장하기 위해 쓰임.
+    localStorage.setItem(TODOS_KEY, JSON.stringify(toDos)); 
 }
 
 function deleteToDo(event){
@@ -35,3 +37,21 @@ function handleToDoSubmit(event){
 }
 
 toDoForm.addEventListener("submit", handleToDoSubmit);
+
+/*
+아래 둘 다 가능. 
+
+(item) => console.log("this is the turn of ", item);
+
+function sayHello(item){
+    console.log("this is the turn of ", item);    
+}
+*/
+
+const savedToDos = localStorage.getItem(TODOS_KEY);
+
+if(savedToDos){
+    const parsedToDos = JSON.parse(savedToDos);
+    toDos = parsedToDos;
+    parsedToDos.forEach(paintToDo);
+}
