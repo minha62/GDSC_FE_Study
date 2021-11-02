@@ -13,6 +13,8 @@ function saveToDos(){
 function deleteToDo(event){
     const li = event.target.parentElement;
     li.remove();
+    toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id)); // li.id는 string toDo.id는 number
+    saveToDos();
 }
 
 function paintToDo(newTodo){
@@ -35,7 +37,7 @@ function handleToDoSubmit(event){
     const newTodoObj = {
         text: newTodo,
         id: Date.now(),
-    }
+    };
     toDos.push(newTodoObj);
     paintToDo(newTodoObj);
     saveToDos();
